@@ -35,7 +35,9 @@ Download the following files to help you get started:
 
 [Forecasting Net Prophet notebook](forecasting_net_prophet.ipynb)
 
-[Data files](google_hourly_search_trends.csv)(mercado_daily_revenue.csv)(mercado_stock_price.csv)
+[Google search trends](google_hourly_search_trends.csv)
+[daily revenue data](mercado_daily_revenue.csv)
+[stock price data](mercado_stock_price.csv)
 
 ---
 

@@ -39,31 +39,7 @@ Download the following files to help you get started:
 
 ---
 
-## Instructions
 
-First, configure a Google Colaboratory, or Colab, workspace as follows:
-
-1. Open [Google Colab](https://colab.research.google.com/), and then upload your starter notebook.
-
-2. Run the provided code in the “Install and import the required libraries and dependencies” section. Note the following:
-
-   - The first cell installs the necessary libraries into the Google Colab runtime.
-
-   - The second cell imports the dependencies for use in the notebook.
-
-With your workspace configured, you can begin the assignment. The instructions are divided into four steps and an optional fifth step as follows:
-
-- Step 1: Find unusual patterns in hourly Google search traffic.
-
-- Step 2: Mine the search traffic data for seasonality.
-
-- Step 3: Relate the search traffic to stock price patterns.
-
-- Step 4: Create a time series model by using Prophet.
-
-- Step 5 (optional): Forecast the revenue by using time series models.
-
-The following subsections detail these steps.
 
 ### Step 1: Find Unusual Patterns in Hourly Google Search Traffic
 
@@ -72,7 +48,6 @@ The data science manager at Mercado Libre asks you if the Google search traffic 
 Answering the question requires you to complete the following steps:
 
 1. Read the search data into a DataFrame, and then slice the data to just the month of May 2020. (During this month, Mercado Libre released its quarterly financial results.) Use hvPlot to visualize the results. Do any unusual patterns exist?
-![](Pictures/Search_Trends_May_2020.png)
 
 2. Calculate the total search traffic for the month, and then compare the value to the monthly median across all months. Did the Google search traffic increase during the month that Mercado Libre released its financial results?
 
@@ -83,13 +58,10 @@ The Marketing department realizes that they can use the hourly search data, too.
 To help Marketing, you'll want to mine the search traffic data for predictable seasonal patterns of interest in the company. Complete the following steps:
 
 1. Group the hourly search data to plot the average traffic by the day of the week (for example, Monday vs. Friday).
-![](Pictures/Search_Trends_May_2020_grpby_dayofweek.png)
 
 2. Using hvPlot, visualize this traffic as a heatmap, referencing `index.hour` for the x-axis and `index.dayofweek` for the y-axis. Does any day-of-week effect that you observe concentrate in just a few hours of that day?
-![](Pictures/Heatmap.png)
 
 3. Group the search data by the week of the year. Does the search traffic tend to increase during the winter holiday period (weeks 40 through 52)?
-![](Pictures/Heatmap_weekofyear.png)
 
 ### Step 3: Relate the Search Traffic to Stock Price Patterns
 
@@ -98,10 +70,8 @@ During a meeting with people in the Finance group, you mention your work on the 
 You can find out the answer by completing the following steps:
 
 1. Read in and plot the stock price data. Concatenate the stock price data to the search data in a single DataFrame.
-![](Pictures/Mercado_stock_price.png)
 
 2. Note that market events emerged during 2020 that many companies found difficult. But after the initial shock to global financial markets, new customers and revenue increased for e-commerce platforms. So, slice the data to just the first half of 2020 (`2020-01` to `2020-06` in the DataFrame), and then use hvPlot to plot the data. Do both time series indicate a common trend that’s consistent with this narrative?
-![](Pictures/trends&prices.png)
 
 3. Create a new column in the DataFrame named “Lagged Search Trends” that offsets, or shifts, the search traffic by one hour. Create two additional columns:
 
@@ -118,12 +88,9 @@ Now, you need to produce a time series model that analyzes and forecasts pattern
 1. Set up the Google search data for a Prophet forecasting model.
 
 2. After estimating the model, plot the forecast. What is the near-term forecast for the popularity of Mercado Libre?
-![](Pictures/Model.png)
-![](Pictures/Prophet_forecast_yhat_upper_lower.png)
 
 3. Plot the individual time series components of the model to answer the following questions:
-![](Pictures/components1.png)
-![](Pictures/components2.png)
+
    - What time of day exhibits the greatest popularity?
 
    - Which day of the week gets the most search traffic?
@@ -139,19 +106,10 @@ Specifically, the finance group wants a forecast of the total sales for the next
 To create the forecast, complete the following steps:
 
 1. Read in the daily historical sales (that is, revenue) figures, and then apply a Prophet model to the data.
-![](Pictures/mercado_daily_sales.png)
 
 2. Interpret the model output to identify any seasonal patterns in the company revenue. For example, what are the peak revenue days? (Mondays? Fridays? Something else?)
-![](Pictures/components_forecast1.png)
 
 3. Produce a sales forecast for the finance group. Give them a number for the expected total sales in the next quarter. Include the best- and worst-case scenarios to help them make better plans.
-![](Pictures/Model_plot.png)
 ---
 
-## Submission
 
-- Create Jupyter notebooks for the analysis, and host them on GitHub.
-
-- Include a Markdown file that summarizes your models and findings, and include this report in your GitHub repo.
-
-- Submit the link to your GitHub project to Bootcamp Spot.
